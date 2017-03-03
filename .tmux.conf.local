@@ -240,3 +240,24 @@ tmux_conf_theme_clock_style='24'
 
 # move status line to top
 #set -g status-position top
+
+# split panes using | and -
+bind | split-window -h
+bind - split-window -v
+
+# copy and paste
+setw -g mode-keys vi
+
+# here do prefix-[ to enter copy mode
+# press v to do visual block selection
+# then paste using prefix-]
+
+bind [ copy-mode
+bind ] paste-buffer
+
+bind-key -t vi-copy 'v' begin-selection
+bind-key -t vi-copy 'y' copy-selection
+bind-key -t vi-copy 'V' rectangle-toggle
+
+# buffer
+bind Space choose-buffer
