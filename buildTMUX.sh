@@ -7,12 +7,13 @@
 # exit on error
 set -e
 
-TMUX_VERSION=2.3
+export CPPFLAGS="-P"
+TMUX_VERSION=2.6
 TMUX_SOURCE=https://github.com/tmux/tmux/releases/download/${TMUX_VERSION}/tmux-${TMUX_VERSION}.tar.gz
 
 TARGET_DIR=$HOME/local                      # set TMUX install location
 BUILD_DIR=`pwd`/build                       # set TMUX working directory location (can delete this afterwards)
-OFFLINE=true
+OFFLINE=false
 
 # create our directories
 mkdir -p $TARGET_DIR $BUILD_DIR
