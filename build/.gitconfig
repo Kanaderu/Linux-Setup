@@ -1,0 +1,38 @@
+[user]
+	name = "David Fan"
+	email = "fand01@udayton.edu"
+[http]
+	sslVerify = true
+[http "https://repos.vdl.afrl.af.mil"]
+	sslCAInfo = /home/kanade/.ssh/Certificates_PKCS7_v5.0u1_DoD.crt
+[alias]
+	# git logs
+	lg1 = log --graph --abbrev-commit --decorate --format=format:'%C(bold blue)%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(white)%s%C(reset) %C(dim white)- %an%C(reset)%C(bold yellow)%d%C(reset)' -- all
+	lg2 = log --graph --abbrev-commit --decorate --format=format:'%C(bold blue)%h%C(reset) - %C(bold cyan)%aD%C(reset) %C(bold green)(%ar)%C(reset)%C(bold yellow)%d%C(reset)''         %C(white)%s%C(reset) %C(dim white)- %an%C(reset)' -- all
+	lg = !"git lg1"
+
+	# open git from url
+	open = "!if() { REPO_URL=$(git config remote.origin.url); xdg-open ${REPO_URL%%.git}; }; f"
+	browse = !git open
+
+	# commit ours or theirs
+	ours   = !"f() { git checkout --ours $@ && git add $@; }; f"
+	theirs = !"f() { git checkout --theirs $@ && git add $@; }; f"
+	
+	# list aliases
+	la = "!git config -l | grep alias | cut -c 7-"
+	# list branches sorted by last modified
+	b = "!git for-each-ref --sort='-authordate' --format='%(authordate)%09%(objectname:short)%09%(refname)' refs/heads | sed -e 's-refs/heads/--'"
+
+	# find file
+	f = "!git ls-files | grep -i"
+
+	# rank contributors by number of merges
+	rank = shortlog -sn --no-merges
+
+	# git add -A 	stages ALL
+	# git add . 	stages new and modified, without deleted
+	# git add -u	stages modified and deleted, without new
+[core]
+	editor = vi
+
