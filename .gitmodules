@@ -22,3 +22,6 @@
 [submodule "modules/vim/vim"]
 	path = modules/vim/vim
 	url = https://github.com/vim/vim.git
+[submodule "modules/zsh/powerlevel9k"]
+	path = modules/zsh/powerlevel9k
+	url = https://github.com/bhilburn/powerlevel9k.git
