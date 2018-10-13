@@ -1,0 +1,54 @@
+# zsh setup
+export ZSH="$USER/.oh-my-zsh"
+
+# set theme
+ZSH_THEME="powerlevel9k/powerlevel9k"
+
+plugins=(
+  git
+)
+
+source $ZSH/oh-my-zsh.sh
+
+# User configuration
+# manpath
+export MANPATH="/usr/local/man:$MANPATH"
+
+# language environment
+export LANG=en_US.UTF-8
+
+# preferred editor
+export EDITOR='vim'
+
+# terminal colors
+export TERM="xterm-256color"
+
+# powerlevel9k config
+POWERLEVEL9K_MODE='awesome-fontconfig'
+POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(context virtualenv dir)
+POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status vcs root_indicator background_jobs history time)
+
+# python virtualenv setup
+export VIRTUALENVWRAPPER_PYTHON=`which python3`
+#source $USER/.local/bin/virtualenvwrapper.sh
+source `locate virtualenvwrapper.sh`
+
+# aliases
+alias apt='sudo apt'
+alias apt-get='sudo apt-get'
+
+# Compilation flags
+# export ARCHFLAGS="-arch x86_64"
+
+# ssh
+# export SSH_KEY_PATH="~/.ssh/rsa_id"
+
+# Set personal aliases, overriding those provided by oh-my-zsh libs,
+# plugins, and themes. Aliases can be placed here, though oh-my-zsh
+# users are encouraged to define aliases within the ZSH_CUSTOM folder.
+# For a full list of active aliases, run `alias`.
+#
+# Example aliases
+# alias zshconfig="mate ~/.zshrc"
+# alias ohmyzsh="mate ~/.oh-my-zsh"
+
