@@ -37,6 +37,10 @@ source `locate virtualenvwrapper.sh`
 alias apt='sudo apt'
 alias apt-get='sudo apt-get'
 
+alias yum='sudo yum'
+
+alias l='ls --color=auto'
+
 # Compilation flags
 # export ARCHFLAGS="-arch x86_64"
 
