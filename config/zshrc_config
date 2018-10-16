@@ -6,6 +6,10 @@ ZSH_THEME="powerlevel9k/powerlevel9k"
 
 plugins=(
   git
+  gitfast
+  sudo
+  tmux
+  wd
 )
 
 source $ZSH/oh-my-zsh.sh
@@ -24,9 +28,12 @@ export EDITOR='vim'
 export TERM="xterm-256color"
 
 # powerlevel9k config
+#POWERLEVEL9K_TIME_FORMAT="%D{%I:%M %p} \uE12E"
+#POWERLEVEL9K_TIME_FORMAT="%D{\uf017 %H:%M \uf073 %d.%m.%y} \uE12E"
+POWERLEVEL9K_TIME_FORMAT="%D{\uf017 %I:%M %p \uf073 %b %d, %Y}"
 POWERLEVEL9K_MODE='awesome-fontconfig'
 POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(context virtualenv dir)
-POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status vcs root_indicator background_jobs history time)
+POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status vcs root_indicator background_jobs history command_execution_time time)
 
 # python virtualenv setup
 export VIRTUALENVWRAPPER_PYTHON=`which python3`
@@ -39,7 +46,32 @@ alias apt-get='sudo apt-get'
 
 alias yum='sudo yum'
 
-alias l='ls --color=auto'
+alias ls='ls --color=auto -h'
+unalias l
+alias l='ls'
+
+alias open='xdg-open'
+
+alias branch='git branch'
+alias checkout='git checkout'
+alias commit='git commit'
+alias add='git add'
+alias grm='git rm'
+alias push='git push'
+alias pull='git pull'
+alias status='git status -uno'
+alias log='git lg2'
+alias lg='git lg1'
+alias lg2='git lg2'
+alias rank='git rank'
+alias diff='git diff'
+alias gours='git ours'
+alias gtheirs='git theirs'
+alias gopen='git open'
+
+# cuda setup
+export PATH=$PATH:/usr/local/cuda/bin
+export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/local/cuda/lib64
 
 # Compilation flags
 # export ARCHFLAGS="-arch x86_64"

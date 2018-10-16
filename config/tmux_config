@@ -180,7 +180,7 @@ tmux_conf_copy_to_os_clipboard=false
 #set -g history-limit 10000
 
 # start with mouse mode enabled
-#set -g mouse on
+set -g mouse on
 
 # force Vi mode
 #   really you should export VISUAL or EDITOR environment variable, see manual
@@ -196,3 +196,16 @@ tmux_conf_copy_to_os_clipboard=false
 
 # move status line to top
 #set -g status-position top
+
+# switch panes using Alt-arrow with prefix (M is meta => Alt)
+bind -n M-Left select-pane -L
+bind -n M-Right select-pane -R
+bind -n M-Up select-pane -U
+bind -n M-Down select-pane -D
+
+# split panes using | and -
+bind | split-window -h
+bind - split-window -v
+
+# kill window
+bind X confirm-before -p "kill-window #W? (y/n)" kill-window  # kill current window   <prefix> + X
