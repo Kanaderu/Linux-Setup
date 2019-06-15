@@ -25,3 +25,6 @@
 [submodule "modules/zsh/powerlevel9k"]
 	path = modules/zsh/powerlevel9k
 	url = https://github.com/bhilburn/powerlevel9k.git
+[submodule "modules/zsh/powerlevel10k"]
+	path = modules/zsh/powerlevel10k
+	url = https://github.com/romkatv/powerlevel10k.git
