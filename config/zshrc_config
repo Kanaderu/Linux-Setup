@@ -10,7 +10,7 @@ ZSH_THEME="powerlevel10k/powerlevel10k"
 
 plugins=(
   catimg            # displays image in terminal
-  common-aliases
+  #common-aliases
   copyfile          # copies contents of file to clipboard
   dircycle          # nondestructive popd/pushd using Ctrl+Shift+Left/Right
   git               # git aliases/completion
