@@ -209,3 +209,7 @@ bind - split-window -v
 
 # kill window
 bind X confirm-before -p "kill-window #W? (y/n)" kill-window  # kill current window   <prefix> + X
+
+set -g prefix2 C-q                        # GNU-Screen compatible prefix
+bind C-q send-prefix -2
+
