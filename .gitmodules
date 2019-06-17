@@ -28,3 +28,6 @@
 [submodule "modules/zsh/powerlevel10k"]
 	path = modules/zsh/powerlevel10k
 	url = https://github.com/romkatv/powerlevel10k.git
+[submodule "modules/fonts/nerd-fonts"]
+	path = modules/fonts/nerd-fonts
+	url = https://github.com/ryanoasis/nerd-fonts.git
