@@ -35,12 +35,12 @@ export TERM="xterm-256color"                # terminal colors
 #POWERLEVEL9K_TIME_FORMAT="%D{\uf017 %H:%M \uf073 %d.%m.%y} \uE12E"
 POWERLEVEL9K_TIME_FORMAT="%D{\uf017 %I:%M %p \uf073 %b %d, %Y}"
 POWERLEVEL9K_MODE='awesome-fontconfig'
-POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(context virtualenv dir)
+POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(context virtualenv anaconda dir)
 POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status vcs root_indicator background_jobs history command_execution_time time)
 
 # python
-export VIRTUALENVWRAPPER_PYTHON=`which python3` # python virtualenv setup
-source `locate virtualenvwrapper.sh`
+#export VIRTUALENVWRAPPER_PYTHON=`which python3` # python virtualenv setup
+#source `locate virtualenvwrapper.sh`
 
 # aliases
 
