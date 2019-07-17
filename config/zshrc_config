@@ -38,6 +38,9 @@ POWERLEVEL9K_MODE='awesome-fontconfig'
 POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(context virtualenv anaconda dir)
 POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status vcs root_indicator background_jobs history command_execution_time time)
 
+# avoid freezing terminal when Ctrl-s is pressed
+stty -ixon
+
 # python
 #export VIRTUALENVWRAPPER_PYTHON=`which python3` # python virtualenv setup
 #source `locate virtualenvwrapper.sh`
